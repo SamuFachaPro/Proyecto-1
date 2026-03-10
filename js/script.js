@@ -21,8 +21,6 @@ header.classList.remove("scrolled")
 const botonHamburguesa=document.getElementById("mobile-menu")
 const menuNavegacion=document.getElementById("nav-menu")
 
-if(botonHamburguesa && menuNavegacion){
-
 botonHamburguesa.addEventListener("click",function(){
 
 menuNavegacion.classList.toggle("active")
@@ -41,19 +39,42 @@ botonHamburguesa.classList.remove("active")
 
 })
 
+/* ANIMACION SCROLL */
+
+function reveal(){
+
+var reveals=document.querySelectorAll(".reveal")
+
+for(var i=0;i<reveals.length;i++){
+
+var windowHeight=window.innerHeight
+var elementTop=reveals[i].getBoundingClientRect().top
+var elementVisible=120
+
+if(elementTop < windowHeight - elementVisible){
+
+reveals[i].classList.add("active")
+
 }
+
+}
+
+}
+
+window.addEventListener("scroll",reveal)
+reveal()
 
 /* SLIDER ANTES DESPUES */
 
-const sliderImg=document.querySelector(".slider")
-const afterImg=document.querySelector(".after")
+const slider=document.querySelector(".slider")
+const after=document.querySelector(".after")
 
-if(sliderImg && afterImg){
+if(slider){
 
-sliderImg.oninput=function(){
+slider.addEventListener("input",function(){
 
-afterImg.style.width=this.value+"%"
+after.style.width=this.value+"%"
 
-}
+})
 
 }
