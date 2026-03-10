@@ -1,7 +1,7 @@
 body{
 margin:0;
 font-family:Arial;
-background:#0a0a0a;
+background:black;
 color:white;
 }
 
@@ -9,77 +9,33 @@ color:white;
 
 .header{
 position:fixed;
-width:100%;
 top:0;
-background:rgba(0,0,0,0.6);
-padding:15px 40px;
-z-index:1000;
-transition:0.3s;
-}
-
-.header.scrolled{
-padding:5px 40px;
-background:#000;
+width:100%;
+background:black;
+padding:15px 30px;
 }
 
 .container{
 display:flex;
-align-items:center;
 justify-content:space-between;
-max-width:1400px;
-margin:auto;
+align-items:center;
 }
-
-/* LOGO */
 
 .logo{
-height:100px;
-transition:0.3s;
+height:80px;
 }
 
-.header.scrolled .logo{
-height:65px;
-}
+/* MENU */
 
-/* MENU DESKTOP */
-
-.nav{
+nav{
 display:flex;
-gap:45px;
-margin:auto;
+gap:30px;
 }
 
-/* EFECTO HOVER */
-
-.nav a{
+nav a{
 color:white;
 text-decoration:none;
 font-size:20px;
-font-weight:600;
-position:relative;
-}
-
-.nav a::after{
-content:"";
-position:absolute;
-width:0%;
-height:2px;
-left:0;
-bottom:-6px;
-background:#ff3c00;
-transition:0.3s;
-}
-
-.nav a:hover::after{
-width:100%;
-}
-
-/* BOTON MENU */
-
-.menu-btn{
-display:none;
-font-size:32px;
-cursor:pointer;
 }
 
 /* HERO */
@@ -87,61 +43,40 @@ cursor:pointer;
 .hero{
 height:100vh;
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
+align-items:center;
 text-align:center;
-background:url("../img/hero.jpg") center/cover no-repeat fixed;
-position:relative;
-}
-
-.hero-overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-}
-
-.hero-content{
-position:relative;
-max-width:700px;
-}
-
-.hero h1{
-font-size:60px;
+background:url("../img/hero.jpg") center/cover no-repeat;
 }
 
 /* MOBILE */
 
+.menu-btn{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+
 @media(max-width:900px){
+
+nav{
+display:none;
+flex-direction:column;
+background:black;
+position:absolute;
+top:80px;
+right:0;
+width:200px;
+padding:20px;
+}
+
+nav.active{
+display:flex;
+}
 
 .menu-btn{
 display:block;
-}
-
-/* MENU OCULTO */
-
-.nav{
-position:fixed;
-top:0;
-right:-100%;
-height:100vh;
-width:70%;
-background:#000;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:40px;
-transition:0.4s;
-}
-
-/* MENU ABIERTO */
-
-.nav.open{
-right:0;
-}
-
-.nav a{
-font-size:26px;
 }
 
 }
