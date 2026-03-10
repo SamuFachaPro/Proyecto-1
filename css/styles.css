@@ -301,3 +301,61 @@ text-decoration:none;
         height: 60px !important;
     }
 }
+/* Aseguramos que el contenedor del header sea relativo */
+.header .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ESTILO DEL BOTÓN (FORZADO) */
+.menu-toggle {
+    display: none; /* Se oculta en desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #ff3c00; /* Color naranja para que resalte */
+    border-radius: 2px;
+    display: block;
+}
+
+/* --- MÓVIL (Menos de 768px) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex !important; /* FORZAMOS QUE APAREZCA */
+    }
+
+    .logo {
+        height: 50px !important; /* Achicamos el logo para que no estorbe */
+    }
+
+    .nav-links {
+        display: none; /* Escondido por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex !important; /* Se muestra al hacer click */
+    }
+
+    .nav-links a {
+        padding: 15px;
+        font-size: 18px;
+        border-bottom: 1px solid #222;
+    }
+}
