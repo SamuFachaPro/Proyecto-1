@@ -205,3 +205,48 @@ justify-content:center;
 border-radius:50%;
 text-decoration:none;
 }
+/* Estilos para el botón hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto en PC */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* --- MEDIA QUERY PARA MÓVILES --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Aparece en móviles */
+    }
+
+    nav {
+        display: none; /* Escondemos el menú normal */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 20px 0;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* Cuando el menú tenga la clase 'active', se muestra */
+    nav.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 35px; /* Ajustamos el tamaño del texto para que quepa */
+    }
+}
