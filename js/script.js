@@ -26,6 +26,7 @@ if(botonHamburguesa && menuNavegacion){
 botonHamburguesa.addEventListener("click",function(){
 
 menuNavegacion.classList.toggle("active")
+botonHamburguesa.classList.toggle("active")
 
 })
 
@@ -34,6 +35,7 @@ document.querySelectorAll("#nav-menu a").forEach(link=>{
 link.addEventListener("click",function(){
 
 menuNavegacion.classList.remove("active")
+botonHamburguesa.classList.remove("active")
 
 })
 
