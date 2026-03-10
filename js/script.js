@@ -26,3 +26,16 @@ slider.oninput=function(){
 after.style.width=this.value+"%"
 
 }
+const menuToggle = document.getElementById('mobile-menu');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Opcional: Cerrar el menú cuando se hace clic en una opción
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
