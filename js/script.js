@@ -1,19 +1,10 @@
-const menuBtn = document.getElementById("menu-btn")
-const nav = document.getElementById("nav")
-
-menuBtn.addEventListener("click", () => {
-
-nav.classList.toggle("open")
-
-})
-
 /* HEADER SCROLL */
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",function(){
 
-const header = document.getElementById("header")
+const header=document.getElementById("header")
 
-if(window.scrollY > 80){
+if(window.scrollY>80){
 
 header.classList.add("scrolled")
 
@@ -24,3 +15,14 @@ header.classList.remove("scrolled")
 }
 
 })
+
+/* ANTES DESPUES */
+
+const slider=document.querySelector(".slider")
+const after=document.querySelector(".after")
+
+slider.oninput=function(){
+
+after.style.width=this.value+"%"
+
+}
