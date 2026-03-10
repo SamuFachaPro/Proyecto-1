@@ -1,219 +1,148 @@
-html{
-scroll-behavior:smooth;
-}
+<!DOCTYPE html>
+<html lang="es">
 
-body{
-font-family:Arial;
-margin:0;
-background:#0a0a0a;
-color:white;
-}
+<head>
 
-/* HEADER */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.header{
-background:rgba(0,0,0,0.6);
-padding:10px 40px;
-position:fixed;
-width:100%;
-z-index:1000;
-transition:0.3s;
-}
+<title>Impresión de murales en paredes en Bogotá | MUROTEC COL</title>
 
-.header.scrolled{
-background:rgba(0,0,0,0.9);
-padding:5px 40px;
-}
+<meta name="description" content="Murales personalizados impresos directamente sobre paredes con tecnología de impresión vertical en Bogotá.">
 
-/* CONTENEDOR */
+<link rel="stylesheet" href="css/styles.css">
 
-.container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-max-width:1400px;
-margin:auto;
-}
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-/* LOGO */
+</head>
 
-.logo{
-height:100px;
-}
+<body>
 
-/* MENU DESKTOP */
+<header class="header" id="header">
 
-nav{
-display:flex;
-gap:45px;
-margin:auto;
-}
+<div class="container">
 
-nav a{
-color:white;
-text-decoration:none;
-font-size:20px;
-font-weight:600;
-position:relative;
-}
+<img src="img/logo.png" class="logo">
 
-nav a::after{
-content:"";
-position:absolute;
-width:0%;
-height:2px;
-left:0;
-bottom:-6px;
-background:#ff3c00;
-transition:0.3s;
-}
+<nav id="menu">
 
-nav a:hover::after{
-width:100%;
-}
+<a href="#">Inicio</a>
+<a href="#servicios">Aplicaciones</a>
+<a href="#video">Tecnología</a>
+<a href="#galeria">Proyectos</a>
+<a href="#contacto">Contacto</a>
 
-/* BOTON MENU MOBILE */
+</nav>
 
-.menu-toggle{
-display:none;
-font-size:32px;
-cursor:pointer;
-}
+<div class="menu-toggle" id="menu-toggle">
+☰
+</div>
 
-/* HERO */
+</div>
 
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:url("../img/hero.jpg") center/cover no-repeat;
-position:relative;
-}
+</header>
 
-.hero-overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9));
-}
+<section class="hero">
 
-.hero-content{
-position:relative;
-max-width:700px;
-padding:20px;
-}
+<div class="hero-overlay"></div>
 
-.hero h1{
-font-size:60px;
-}
+<div class="hero-content">
 
-.hero p{
-font-size:20px;
-opacity:0.9;
-}
+<h1>Arte impreso directamente sobre paredes</h1>
 
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 30px;
-background:#ff3c00;
-color:white;
-text-decoration:none;
-border-radius:6px;
-}
+<p>
+Murales personalizados con tecnología de impresión vertical y protección UV para interiores y exteriores.
+</p>
 
-/* SECCIONES */
+<a href="https://wa.me/573000000000" class="btn">
+Solicitar información
+</a>
 
-.servicios,
-.galeria,
-.video-section,
-.contacto{
-padding:120px 20px;
-text-align:center;
-}
+</div>
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1100px;
-margin:auto;
-margin-top:40px;
-}
+</section>
 
-.card{
-background:#1a1a1a;
-padding:35px;
-border-radius:10px;
-}
+<section id="servicios" class="servicios">
 
-.portfolio{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
-margin-top:40px;
-}
+<h2>Aplicaciones</h2>
 
-.portfolio img{
-width:100%;
-border-radius:10px;
-transition:0.4s;
-}
+<div class="grid">
 
-.portfolio img:hover{
-transform:scale(1.05);
-}
+<div class="card">
+<h3>Murales decorativos</h3>
+<p>Arte personalizado para hogares.</p>
+</div>
 
-/* WHATSAPP */
+<div class="card">
+<h3>Murales comerciales</h3>
+<p>Diseños para restaurantes y oficinas.</p>
+</div>
 
-.whatsapp-float{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-font-size:28px;
-width:60px;
-height:60px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-text-decoration:none;
-}
+<div class="card">
+<h3>Logos empresariales</h3>
+<p>Identidad corporativa sobre muros.</p>
+</div>
 
-/* MOBILE */
+<div class="card">
+<h3>Impresión en pisos</h3>
+<p>Diseños sobre superficies planas.</p>
+</div>
 
-@media(max-width:900px){
+</div>
 
-nav{
-position:fixed;
-top:80px;
-left:-100%;
-width:100%;
-height:100vh;
-background:#000;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:40px;
-transition:0.4s;
-}
+</section>
 
-nav.active{
-left:0;
-}
+<section id="video" class="video-section">
 
-nav a{
-font-size:28px;
-}
+<h2>Tecnología de impresión</h2>
 
-.menu-toggle{
-display:block;
-}
+<div class="video-container">
 
-}
+<video autoplay muted loop playsinline>
+
+<source src="video/impresion.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+</section>
+
+<section id="galeria" class="galeria">
+
+<h2>Proyectos</h2>
+
+<div class="portfolio">
+
+<img src="img/mural1.jpg">
+<img src="img/mural2.jpg">
+<img src="img/mural3.jpg">
+
+</div>
+
+</section>
+
+<section id="contacto" class="contacto">
+
+<h2>Solicita tu mural</h2>
+
+<p>Contáctanos para cotizar tu proyecto en Bogotá.</p>
+
+<a href="https://wa.me/573000000000" class="btn">
+Escribir por WhatsApp
+</a>
+
+</section>
+
+<footer>
+
+<p>© 2026 MUROTEC COL</p>
+
+</footer>
+
+<a href="https://wa.me/573000000000" class="whatsapp-float">💬</a>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
