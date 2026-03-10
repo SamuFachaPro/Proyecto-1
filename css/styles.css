@@ -12,13 +12,13 @@ position:fixed;
 width:100%;
 top:0;
 background:rgba(0,0,0,0.6);
-padding:15px 30px;
+padding:15px 40px;
 z-index:1000;
 transition:0.3s;
 }
 
 .header.scrolled{
-padding:5px 30px;
+padding:5px 40px;
 background:#000;
 }
 
@@ -26,7 +26,7 @@ background:#000;
 display:flex;
 align-items:center;
 justify-content:space-between;
-max-width:1300px;
+max-width:1400px;
 margin:auto;
 }
 
@@ -38,20 +38,40 @@ transition:0.3s;
 }
 
 .header.scrolled .logo{
-height:70px;
+height:65px;
 }
 
-/* MENU */
+/* MENU DESKTOP */
 
 .nav{
 display:flex;
-gap:40px;
+gap:45px;
+margin:auto;
 }
+
+/* EFECTO HOVER */
 
 .nav a{
 color:white;
 text-decoration:none;
 font-size:20px;
+font-weight:600;
+position:relative;
+}
+
+.nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+left:0;
+bottom:-6px;
+background:#ff3c00;
+transition:0.3s;
+}
+
+.nav a:hover::after{
+width:100%;
 }
 
 /* BOTON MENU */
@@ -87,81 +107,41 @@ max-width:700px;
 }
 
 .hero h1{
-font-size:55px;
-}
-
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:14px 30px;
-background:#ff3c00;
-color:white;
-text-decoration:none;
-border-radius:6px;
-}
-
-/* SECCIONES */
-
-.section{
-padding:120px 20px;
-text-align:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1100px;
-margin:auto;
-margin-top:40px;
-}
-
-.card{
-background:#1a1a1a;
-padding:35px;
-border-radius:10px;
-}
-
-.portfolio{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
-margin-top:40px;
-}
-
-.portfolio img{
-width:100%;
-border-radius:10px;
+font-size:60px;
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
 
+.menu-btn{
+display:block;
+}
+
+/* MENU OCULTO */
+
 .nav{
-position:absolute;
-top:80px;
-left:0;
-width:100%;
+position:fixed;
+top:0;
+right:-100%;
+height:100vh;
+width:70%;
 background:#000;
 flex-direction:column;
 align-items:center;
-display:none;
-padding:30px 0;
+justify-content:center;
+gap:40px;
+transition:0.4s;
 }
 
-.nav.show{
-display:flex;
+/* MENU ABIERTO */
+
+.nav.open{
+right:0;
 }
 
 .nav a{
 font-size:26px;
-}
-
-.menu-btn{
-display:block;
 }
 
 }
