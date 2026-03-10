@@ -9,9 +9,11 @@ background:#0a0a0a;
 color:white;
 }
 
+/* HEADER */
+
 .header{
 background:rgba(0,0,0,0.7);
-padding:20px;
+padding:10px 30px;
 position:fixed;
 width:100%;
 z-index:10;
@@ -26,16 +28,30 @@ max-width:1200px;
 margin:auto;
 }
 
+/* LOGO MEJORADO */
+
 .logo{
-height:50px;
+height:80px;
+width:auto;
+object-fit:contain;
 }
+
+/* MENU */
 
 nav a{
 color:white;
-margin-left:20px;
+margin-left:25px;
 text-decoration:none;
 font-weight:bold;
+font-size:16px;
+transition:0.3s;
 }
+
+nav a:hover{
+color:#ff3c00;
+}
+
+/* HERO */
 
 .hero{
 height:100vh;
@@ -80,6 +96,8 @@ text-decoration:none;
 border-radius:6px;
 }
 
+/* SERVICIOS */
+
 .servicios{
 padding:100px 20px;
 text-align:center;
@@ -100,6 +118,8 @@ padding:30px;
 border-radius:10px;
 }
 
+/* VIDEO */
+
 .video-section{
 padding:100px 20px;
 text-align:center;
@@ -116,6 +136,8 @@ margin-top:40px;
 width:100%;
 border-radius:10px;
 }
+
+/* GALERIA */
 
 .galeria{
 padding:100px 20px;
@@ -141,6 +163,8 @@ transition:transform 0.5s;
 transform:scale(1.05);
 }
 
+/* CONTACTO */
+
 .contacto{
 padding:100px 20px;
 text-align:center;
@@ -152,6 +176,8 @@ text-align:center;
 padding:30px;
 background:#000;
 }
+
+/* WHATSAPP */
 
 .whatsapp-float{
 position:fixed;
