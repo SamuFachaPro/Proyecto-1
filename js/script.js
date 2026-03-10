@@ -1,15 +1,15 @@
 const menuBtn = document.getElementById("menu-btn")
 const nav = document.getElementById("nav")
 
-menuBtn.addEventListener("click", function(){
+menuBtn.addEventListener("click", () => {
 
-nav.classList.toggle("show")
+nav.classList.toggle("open")
 
 })
 
-/* SCROLL HEADER */
+/* HEADER SCROLL */
 
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll", () => {
 
 const header = document.getElementById("header")
 
