@@ -1,17 +1,19 @@
-const toggle = document.getElementById("menu-toggle")
-const menu = document.getElementById("menu")
+const menuBtn = document.getElementById("menu-btn")
+const nav = document.getElementById("nav")
 
-toggle.onclick = () => {
-menu.classList.toggle("active")
-}
+menuBtn.addEventListener("click", function(){
 
-/* HEADER SCROLL */
+nav.classList.toggle("show")
 
-window.addEventListener("scroll",function(){
+})
 
-const header=document.getElementById("header")
+/* SCROLL HEADER */
 
-if(window.scrollY>80){
+window.addEventListener("scroll", function(){
+
+const header = document.getElementById("header")
+
+if(window.scrollY > 80){
 
 header.classList.add("scrolled")
 
@@ -22,14 +24,3 @@ header.classList.remove("scrolled")
 }
 
 })
-
-/* ANTES DESPUES */
-
-const slider=document.querySelector(".slider")
-const after=document.querySelector(".after")
-
-slider.oninput=function(){
-
-after.style.width=this.value+"%"
-
-}
