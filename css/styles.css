@@ -250,3 +250,54 @@ text-decoration:none;
         font-size: 35px; /* Ajustamos el tamaño del texto para que quepa */
     }
 }
+/* --- ESTILO DEL BOTÓN HAMBURGUESA --- */
+.menu-toggle {
+    display: none; /* Se oculta en computadoras */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white; /* Color de las rayitas */
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* --- MEDIA QUERY PARA CELULARES --- */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* APARECE EN CELULAR */
+    }
+
+    nav {
+        display: none; /* Escondemos el menú normal horizontal */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 100%; /* Aparece debajo del logo */
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    /* Clase que activaremos con JS */
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 15px;
+        font-size: 22px;
+        border-bottom: 1px solid #333;
+    }
+
+    /* Opcional: Ajuste del logo en celular */
+    .logo {
+        height: 60px !important;
+    }
+}
