@@ -39,3 +39,18 @@ document.querySelectorAll('nav a').forEach(link => {
         navMenu.classList.remove('active');
     });
 });
+// Seleccionamos los elementos
+const menuBtn = document.getElementById('mobile-menu');
+const navMenu = document.getElementById('nav-menu');
+
+// Al hacer clic en el botón...
+menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active'); // Muestra/Oculta el menú
+});
+
+// Cerrar el menú automáticamente al tocar cualquier opción
+document.querySelectorAll('nav a').forEach(enlace => {
+    enlace.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
