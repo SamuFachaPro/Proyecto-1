@@ -1,68 +1,38 @@
-/* HEADER SCROLL */
+/* 1. EFECTO SCROLL DEL HEADER */
+window.addEventListener("scroll", function() {
+    const header = document.getElementById("header");
+    if (window.scrollY > 80) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
 
-window.addEventListener("scroll",function(){
+/* 2. MENU MOBILE (ABRIR/CERRAR) */
+// Usamos nombres únicos para evitar el error de "already declared"
+const botonHamburguesa = document.getElementById('mobile-menu');
+const menuNavegacion = document.getElementById('nav-menu');
 
-const header=document.getElementById("header")
+if (botonHamburguesa && menuNavegacion) {
+    botonHamburguesa.addEventListener('click', () => {
+        menuNavegacion.classList.toggle('active');
+        console.log("Menú clickeado");
+    });
 
-if(window.scrollY>80){
-
-header.classList.add("scrolled")
-
-}else{
-
-header.classList.remove("scrolled")
-
+    // Cerrar el menú al tocar un enlace
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuNavegacion.classList.remove('active');
+        });
+    });
 }
 
-})
+/* 3. SLIDER ANTES / DESPUÉS */
+const sliderImg = document.querySelector(".slider");
+const afterImg = document.querySelector(".after");
 
-/* ANTES DESPUES */
-
-const slider=document.querySelector(".slider")
-const after=document.querySelector(".after")
-
-slider.oninput=function(){
-
-after.style.width=this.value+"%"
-
+if (sliderImg && afterImg) {
+    sliderImg.oninput = function() {
+        afterImg.style.width = this.value + "%";
+    };
 }
-const menuToggle = document.getElementById('mobile-menu');
-const navMenu = document.getElementById('nav-menu');
-
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Opcional: Cerrar el menú cuando se hace clic en una opción
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-// Seleccionamos los elementos
-const menuBtn = document.getElementById('mobile-menu');
-const navMenu = document.getElementById('nav-menu');
-
-// Al hacer clic en el botón...
-menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active'); // Muestra/Oculta el menú
-});
-
-// Cerrar el menú automáticamente al tocar cualquier opción
-document.querySelectorAll('nav a').forEach(enlace => {
-    enlace.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-const menuBtn = document.getElementById('mobile-menu');
-const navMenu = document.getElementById('nav-menu');
-
-menuBtn.addEventListener('click', () => {
-    console.log("Click en el menú"); // Esto te dirá en la consola si funciona
-    navMenu.classList.toggle('active');
-});
-
-// Cerrar al clickear un link
-document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-}));
