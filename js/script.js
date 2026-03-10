@@ -54,3 +54,15 @@ document.querySelectorAll('nav a').forEach(enlace => {
         navMenu.classList.remove('active');
     });
 });
+const menuBtn = document.getElementById('mobile-menu');
+const navMenu = document.getElementById('nav-menu');
+
+menuBtn.addEventListener('click', () => {
+    console.log("Click en el menú"); // Esto te dirá en la consola si funciona
+    navMenu.classList.toggle('active');
+});
+
+// Cerrar al clickear un link
+document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+}));
