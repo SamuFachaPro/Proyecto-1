@@ -12,20 +12,25 @@ color:white;
 /* HEADER */
 
 .header{
-background:rgba(0,0,0,0.75);
-padding:15px 40px;
+background:rgba(0,0,0,0.6);
+padding:10px 40px;
 position:fixed;
 width:100%;
-z-index:10;
-backdrop-filter:blur(10px);
+z-index:1000;
+transition:0.3s;
 }
 
-/* NUEVA DISTRIBUCION */
+.header.scrolled{
+background:rgba(0,0,0,0.9);
+padding:5px 40px;
+}
+
+/* CONTENEDOR */
 
 .container{
-display:grid;
-grid-template-columns:1fr 2fr 1fr;
+display:flex;
 align-items:center;
+justify-content:space-between;
 max-width:1400px;
 margin:auto;
 }
@@ -34,31 +39,23 @@ margin:auto;
 
 .logo{
 height:100px;
-width:auto;
-object-fit:contain;
 }
 
-/* MENU CENTRADO */
+/* MENU DESKTOP */
 
 nav{
 display:flex;
-justify-content:center;
-gap:50px;
+gap:45px;
+margin:auto;
 }
-
-/* ITEMS MENU */
 
 nav a{
 color:white;
 text-decoration:none;
-font-weight:600;
 font-size:20px;
-letter-spacing:1px;
+font-weight:600;
 position:relative;
-transition:0.3s;
 }
-
-/* EFECTO HOVER ELEGANTE */
 
 nav a::after{
 content:"";
@@ -75,8 +72,12 @@ nav a:hover::after{
 width:100%;
 }
 
-nav a:hover{
-color:#ff3c00;
+/* BOTON MENU MOBILE */
+
+.menu-toggle{
+display:none;
+font-size:32px;
+cursor:pointer;
 }
 
 /* HERO */
@@ -105,8 +106,7 @@ padding:20px;
 }
 
 .hero h1{
-font-size:64px;
-margin-bottom:20px;
+font-size:60px;
 }
 
 .hero p{
@@ -124,9 +124,12 @@ text-decoration:none;
 border-radius:6px;
 }
 
-/* SERVICIOS */
+/* SECCIONES */
 
-.servicios{
+.servicios,
+.galeria,
+.video-section,
+.contacto{
 padding:120px 20px;
 text-align:center;
 }
@@ -146,32 +149,6 @@ padding:35px;
 border-radius:10px;
 }
 
-/* VIDEO */
-
-.video-section{
-padding:120px 20px;
-text-align:center;
-background:#000;
-}
-
-.video-container{
-max-width:900px;
-margin:auto;
-margin-top:40px;
-}
-
-.video-container video{
-width:100%;
-border-radius:10px;
-}
-
-/* GALERIA */
-
-.galeria{
-padding:120px 20px;
-text-align:center;
-}
-
 .portfolio{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -184,25 +161,11 @@ margin-top:40px;
 .portfolio img{
 width:100%;
 border-radius:10px;
-transition:transform 0.5s;
+transition:0.4s;
 }
 
 .portfolio img:hover{
 transform:scale(1.05);
-}
-
-/* CONTACTO */
-
-.contacto{
-padding:120px 20px;
-text-align:center;
-background:#000;
-}
-
-footer{
-text-align:center;
-padding:30px;
-background:#000;
 }
 
 /* WHATSAPP */
@@ -221,4 +184,36 @@ align-items:center;
 justify-content:center;
 border-radius:50%;
 text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+position:fixed;
+top:80px;
+left:-100%;
+width:100%;
+height:100vh;
+background:#000;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:40px;
+transition:0.4s;
+}
+
+nav.active{
+left:0;
+}
+
+nav a{
+font-size:28px;
+}
+
+.menu-toggle{
+display:block;
+}
+
 }
