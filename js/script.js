@@ -5,30 +5,25 @@ const nav = document.getElementById("nav-menu");
 
 menu.addEventListener("click", () => {
 nav.classList.toggle("active");
-menu.classList.toggle("active");
 });
 
 // HEADER SCROLL
 
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll", () => {
 const header = document.getElementById("header");
-if(window.scrollY > 50){
-header.classList.add("scrolled");
-}else{
-header.classList.remove("scrolled");
-}
+header.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-// ANIMACIONES (FIX REAL)
+// ANIMACIONES
 
 function reveal(){
-const reveals = document.querySelectorAll(".reveal");
+const elements = document.querySelectorAll(".reveal");
 
-reveals.forEach((el)=>{
+elements.forEach(el=>{
+const top = el.getBoundingClientRect().top;
 const windowHeight = window.innerHeight;
-const elementTop = el.getBoundingClientRect().top;
 
-if(elementTop < windowHeight - 100){
+if(top < windowHeight - 100){
 el.classList.add("active");
 }
 });
@@ -37,12 +32,12 @@ el.classList.add("active");
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
 
-// ANTES / DESPUÉS
+// ANTES DESPUES
 
 const slider = document.querySelector(".slider");
 const after = document.querySelector(".after");
 
-if(slider && after){
+if(slider){
 slider.oninput = function(){
 after.style.width = this.value + "%";
 };
