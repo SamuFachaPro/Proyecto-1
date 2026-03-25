@@ -96,7 +96,7 @@ cursor:pointer;
 }
 
 .menu-toggle .bar{
-width:32px;
+width:28px;
 height:4px;
 background:#ff3c00;
 border-radius:10px;
@@ -104,7 +104,7 @@ transition:0.4s;
 }
 
 .menu-toggle.active .bar:nth-child(1){
-transform:rotate(45deg) translate(6px,6px);
+transform:rotate(45deg) translate(5px,5px);
 }
 
 .menu-toggle.active .bar:nth-child(2){
@@ -112,7 +112,7 @@ opacity:0;
 }
 
 .menu-toggle.active .bar:nth-child(3){
-transform:rotate(-45deg) translate(7px,-7px);
+transform:rotate(-45deg) translate(6px,-6px);
 }
 
 /* HERO */
@@ -123,21 +123,39 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background:url("../img/hero.jpg") center/cover no-repeat fixed;
 position:relative;
 padding:0 20px;
+overflow:hidden;
 }
+
+/* VIDEO HERO */
+
+.hero-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:0;
+}
+
+/* OVERLAY */
 
 .hero-overlay{
 position:absolute;
 width:100%;
 height:100%;
 background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.85));
+z-index:1;
 }
+
+/* CONTENIDO HERO */
 
 .hero-content{
 position:relative;
 max-width:800px;
+z-index:2;
 }
 
 .hero h1{
@@ -148,6 +166,8 @@ margin-bottom:20px;
 .hero p{
 font-size:clamp(16px,4vw,20px);
 }
+
+/* BOTONES */
 
 .btn{
 display:inline-block;
@@ -273,6 +293,7 @@ justify-content:center;
 border-radius:50%;
 text-decoration:none;
 z-index:1000;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
 /* ANIMACIONES SCROLL */
@@ -335,6 +356,14 @@ height:95px;
 
 .header.scrolled .logo{
 height:70px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
 }
 
 }
