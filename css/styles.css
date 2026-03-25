@@ -93,6 +93,7 @@ justify-content:center;
 align-items:center;
 gap:7px;
 cursor:pointer;
+z-index:1100;
 }
 
 .menu-toggle .bar{
@@ -128,7 +129,7 @@ padding:0 20px;
 overflow:hidden;
 }
 
-/* VIDEO HERO */
+/* VIDEO */
 
 .hero-video{
 position:absolute;
@@ -137,25 +138,27 @@ left:0;
 width:100%;
 height:100%;
 object-fit:cover;
-z-index:0;
+z-index:-2;
 }
 
 /* OVERLAY */
 
 .hero-overlay{
 position:absolute;
+top:0;
+left:0;
 width:100%;
 height:100%;
 background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.85));
-z-index:1;
+z-index:-1;
 }
 
-/* CONTENIDO HERO */
+/* CONTENIDO */
 
 .hero-content{
 position:relative;
+z-index:10;
 max-width:800px;
-z-index:2;
 }
 
 .hero h1{
@@ -296,7 +299,7 @@ z-index:1000;
 box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* ANIMACIONES SCROLL */
+/* ANIMACIONES */
 
 .reveal{
 opacity:0;
